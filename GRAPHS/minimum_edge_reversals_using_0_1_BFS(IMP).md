@@ -1,7 +1,7 @@
 # 🚀 Problem: Minimum Edge Reversals
 
 
-📚 [0-1 BFS Explanation and personal doubts](./"0_1_BFS_using_Deque(IMP).md")
+📚 [0-1 BFS Explanation and personal doubts](./0_1_BFS_using_Deque(IMP).md)
 [Problem Link GFG](https://www.geeksforgeeks.org/problems/minimum-edges/1)
 
 
