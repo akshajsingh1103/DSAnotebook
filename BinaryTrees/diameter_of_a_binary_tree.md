@@ -13,6 +13,17 @@ Given the root of a binary tree, return the **diameter of the tree** — the num
 
 ### code
 ```cpp
+//1) wrong approach just adding up the height of ther right and left wont account for the max diameter because It only checks the diameter passing through the root — but that’s not guaranteed to be the max.
+             1
+            /
+           2
+          / \
+        3    5
+       /      \
+      4        6
+
+// HERE ACTUAL diameter max is 4 but its not thru the root node so this approach is wrong
+
 int func(Node * temp){
         if(temp == nullptr) return 0 ;
         
@@ -25,6 +36,31 @@ int func(Node * temp){
         int right = func(root->right);
         int left = func(root->left);
         return right+left ;
+
+---
+//Now the inefficient approach is this
+
+int d(Node* temp){
+        if(temp== nullptr) return 0;
+        int l = d(temp->left);
+        int r = d(temp->right);
+        int both = func(temp->left) + func(temp->right);
+        return max(l,max(r,both));
+    }
+    int func(Node * temp){
+        if(temp == nullptr) return 0 ;
+        
+        int right = func(temp->right);
+        int left = func(temp->left);
+        
+        return max(left, right) + 1 ;
+    }
+    int diameter(Node* root) {
+        
+        return d(root) ;
+        
+    }
+    // why this is wrong is stated below
         
 ```
 ---
