@@ -50,17 +50,6 @@ However, some numbers contribute **more than one 5**, e.g., 25, 125, 625, etc.
 
 Count how many numbers up to `n` are divisible by powers of 5:
 
-```cpp
-int trailingZeroes(int n) {
-    int count = 0;
-    for (int i = 5; i <= n; i *= 5) {
-        count += n / i;
-    }
-    return count;
-}
-```
-
-
 - `n / 5` counts factors from multiples of 5  
 - `n / 25` counts extra factors from multiples of 25  
 - `n / 125` counts extra factors from multiples of 125  
@@ -98,12 +87,12 @@ The bottleneck for creating trailing zeros is the number of 5s.
 ## Complete C++ Code Example
 
 ```cpp
-#include <iostream>
-using namespace std;
-
 int trailingZeroes(int n) {
     int count = 0;
     for (int i = 5; i <= n; i *= 5) {
-        count += n / i
+        count += n / i;
+    }
+    return count;
+}
 ```
 
