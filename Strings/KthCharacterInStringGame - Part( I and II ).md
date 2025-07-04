@@ -273,23 +273,27 @@ char func(int k, int depth, char c, vector<int>& operations)
 ### New Logic:
 
 ```cpp
-if (operations[depth - 1] == 0) {
-    // Type 0 operation: double the word
-    // So: build(d, c) = build(d-1, c) + build(d-1, c)
-    if (k <= half)
-        return func(k, depth - 1, c, operations);
-    else
-        return func(k - half, depth - 1, c, operations);
-} else {
-    // Type 1 operation: append shifted version
-    // So: build(d, c) = build(d-1, c) + build(d-1, shift(c))
-    if (k <= half)
-        return func(k, depth - 1, c, operations);
-    else {
-        char new_c = (c - 'a' + 1) % 26 + 'a';
-        return func(k - half, depth - 1, new_c, operations);
+class Solution {
+public:
+    char func(long long k, int depth, char c, const vector<int>& ops) {
+        if (depth == 0) return c;
+
+        long long half = 1LL << (depth - 1);
+        if (k <= half) {
+            return func(k, depth - 1, c, ops);
+        } else {
+            char new_c = ops[depth - 1] == 1 ? (c - 'a' + 1) % 26 + 'a' : c;
+            return func(k - half, depth - 1, new_c, ops);
+        }
     }
-}
+
+    char kthCharacter(long long k, vector<int>& operations) {
+        int depth = 0;
+        while ((1LL << depth) < k) depth++;
+        return func(k, depth, 'a', operations);
+    }
+};
+
 ```
 
 ---
