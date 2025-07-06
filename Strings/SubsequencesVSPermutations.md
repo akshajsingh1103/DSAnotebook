@@ -125,8 +125,3 @@ public:
 - Don’t confuse **substrings** (continuous) with subsequences
 
 ---
-
-Let me know if you want this exported as a downloadable file or extended to support:
-- Unique permutations (with duplicates)
-- Lexicographically sorted outputs
-- Filtering palindromic subsequences, etc.
