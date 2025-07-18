@@ -2,7 +2,7 @@
 
 [Problem Link](https://leetcode.com/problems/count-number-of-nice-subarrays/description/)
 
-See [Similar Problem](./BinarySubstringsWithSums.md) for a related approach.
+See [Similar Problem](./BinarySubstringsWithSum.md) for a related approach.
 
 ## Problem Statement
 
