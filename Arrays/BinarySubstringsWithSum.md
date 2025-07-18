@@ -2,7 +2,7 @@
 
 [Problem Link](https://leetcode.com/problems/binary-subarrays-with-sum/description/)
 
-See [Similar Problem](./NumberOfSubArrayWithKOddNumbers.md) for a related approach.
+See [Similar Problem](./NumberOfSubArraysWithKOddNumbers.md) for a related approach.
 
 Given a binary array `nums` and an integer `goal`, return the number of non-empty subarrays with a sum equal to `goal`.
 
